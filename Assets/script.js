@@ -20,6 +20,28 @@ function generatePassword() {
   if (Uppercase === true) {
     holdingcharacters += Uppercaseletters
   } console.log(holdingcharacters)
+
+  let lowercaseletters = confirm("Do you want lowercase Letters?");
+  console.log(lowercaseletters)
+  if (lowercaseletters === true) {
+    holdingcharacters += lowercaseletters
+  } console.log(holdingcharacters)
+
+  let numbers = confirm("Do you want numbers?");
+  console.log(numbers)
+  if (numbers === true) {
+    holdingcharacters += numbers
+  } console.log(holdingcharacters)
+
+  let specialcharcters = confirm("Do you want special characters Letters?");
+  console.log(specialcharcters)
+  if (specialcharcters === true) {
+    holdingcharacters += specialcharcters
+  } console.log(holdingcharacters)
+
+  for (var i = 0; i < holdingcharacters.length; i++) { }
+  { console.log(holdingcharacters)[i] }
+
 }
 
 // Write password to the #password input
