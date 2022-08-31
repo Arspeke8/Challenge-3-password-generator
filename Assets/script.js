@@ -2,7 +2,7 @@
 var Uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var lowercaseletters = "abcdefghijklmnopqrstuvwxyz"
 var numbers = "0123456789"
-var specialcharcters = "!@#$%^&*()"
+var specialcharacters = "!@#$%^&*()"
 var holdingcharacters = ""
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -21,37 +21,72 @@ function generatePassword() {
     holdingcharacters += Uppercaseletters
   } console.log(holdingcharacters)
 
-  let lowercaseletters = confirm("Do you want lowercase Letters?");
-  console.log(lowercaseletters)
-  if (lowercaseletters === true) {
+  let lowercase = confirm("Do you want lowercase Letters?");
+  console.log(lowercase)
+  if (lowercase === true) {
     holdingcharacters += lowercaseletters
   } console.log(holdingcharacters)
 
-  let numbers = confirm("Do you want numbers?");
-  console.log(numbers)
-  if (numbers === true) {
+  let number = confirm("Do you want numbers?");
+  console.log(number)
+  if (number === true) {
     holdingcharacters += numbers
   } console.log(holdingcharacters)
 
-  let specialcharcters = confirm("Do you want special characters Letters?");
-  console.log(specialcharcters)
-  if (specialcharcters === true) {
-    holdingcharacters += specialcharcters
+  let specialcharacter = confirm("Do you want special characters Letters?");
+  console.log(specialcharacter)
+  if (specialcharacter === true) {
+    holdingcharacters += specialcharacters
   } console.log(holdingcharacters)
 
-  for (var i = 0; i < holdingcharacters.length; i++) { }
-  { console.log(holdingcharacters)[i] }
+  //password length value is stored in passwordlink 
 
+  for (var i = 1; i < passwordlink; i++) {
+    writePassword += holdingcharacters.charAt(Math.floor(Math.random() *
+      holdingcharacters.length));
+
+  }
 }
+/*
+for (var i = 0; i < holdingcharacters.length; i++) { }
+{ console.log(holdingcharacters)[i] } if 
+
+holdingcharacters ==
+*/
+
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  console.log(writePassword)
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+/* I have holdingcharacters - which has a string of my random characters. How do I get "holdingcharacters"
+to randomly choose from the holdingcharacters on the input value from my beginning prompt "passwordlink" 
+which will hold a value of 8 - 128 picking whatever randomly using //Math.floor(Math.random() * max);
+But my string has a length of 72 Need to pick from:
+var Uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowercaseletters = "abcdefghijklmnopqrstuvwxyz"
+var numbers = "0123456789"
+var specialcharacters = "!@#$%^&*()"
+one by one randomly so it picks from all randomly 72
+
+function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * 
+charactersLength));
+  }
+  return result;
+}
+
+console.log(makeid(5)); 
+*/
