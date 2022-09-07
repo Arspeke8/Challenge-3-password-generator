@@ -15,29 +15,39 @@ function generatePassword() {
     return
   }
 
-  let Uppercase = confirm("Do you want Upppercase Letters?");
+  let Uppercase = confirm("Do you want Upppercase Letters? Click OK to add, or click Cancel for no.");
   console.log(Uppercase)
   if (Uppercase === true) {
     holdingcharacters += Uppercaseletters
-  } console.log(holdingcharacters)
-
-  let lowercase = confirm("Do you want lowercase Letters?");
+  } else (Uppercase == false) 
+    console.log(holdingcharacters) 
+  
+  let lowercase = confirm("Do you want lowercase Letters? Click OK to add, or click Cancel for no.");
   console.log(lowercase)
   if (lowercase === true) {
     holdingcharacters += lowercaseletters
-  } console.log(holdingcharacters)
+  } else (lowercase == false) 
+   
+  
+  console.log(holdingcharacters)
 
-  let number = confirm("Do you want numbers?");
+  let number = confirm("Do you want numbers? Click OK to add, or click Cancel for no.");
   console.log(number)
   if (number === true) {
     holdingcharacters += numbers
-  } console.log(holdingcharacters)
+  } else (number == false) 
+  
+  
+  console.log(holdingcharacters)
 
-  let specialcharacter = confirm("Do you want special characters Letters?");
+  let specialcharacter = confirm("Do you want special characters Letters? Click OK to add, or click Cancel for no.");
   console.log(specialcharacter)
   if (specialcharacter === true) {
     holdingcharacters += specialcharacters
-  } console.log(holdingcharacters)
+  } else (specialcharacter == false) 
+  
+  
+  console.log(holdingcharacters)
 
   //password length value is stored in passwordlink 
 
@@ -52,6 +62,13 @@ for (var i = 0; i < holdingcharacters.length; i++) { }
 { console.log(holdingcharacters)[i] } if 
 
 holdingcharacters ==
+
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+
 */
 
 
