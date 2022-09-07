@@ -15,10 +15,14 @@ function generatePassword() {
     return
   }
 
+let finalpassword = ""
+
   let Uppercase = confirm("Do you want Upppercase Letters? Click OK to add, or click Cancel for no.");
   console.log(Uppercase)
   if (Uppercase === true) {
     holdingcharacters += Uppercaseletters
+    finalpassword += Uppercaseletters[Math.floor(Math.random() *
+    Uppercaseletters.length)]
   } else (Uppercase == false) 
     console.log(holdingcharacters) 
   
@@ -26,6 +30,8 @@ function generatePassword() {
   console.log(lowercase)
   if (lowercase === true) {
     holdingcharacters += lowercaseletters
+    finalpassword += lowercaseletters[Math.floor(Math.random() *
+      lowercaseletters.length)]
   } else (lowercase == false) 
    
   
@@ -35,6 +41,8 @@ function generatePassword() {
   console.log(number)
   if (number === true) {
     holdingcharacters += numbers
+    finalpassword += numbers[Math.floor(Math.random() *
+      numbers.length)]
   } else (number == false) 
   
   
@@ -44,18 +52,22 @@ function generatePassword() {
   console.log(specialcharacter)
   if (specialcharacter === true) {
     holdingcharacters += specialcharacters
+    finalpassword += specialcharacters[Math.floor(Math.random() *
+      specialcharacters.length)]
   } else (specialcharacter == false) 
   
-  
+  console.log(finalpassword)
   console.log(holdingcharacters)
 
   //password length value is stored in passwordlink 
 
-  for (var i = 1; i < passwordlink; i++) {
-    writePassword += holdingcharacters.charAt(Math.floor(Math.random() *
+  for (var i = 0; finalpassword.length < passwordlink; i++) {
+    finalpassword += holdingcharacters.charAt(Math.floor(Math.random() *
       holdingcharacters.length));
 
   }
+  var shufflepassword = finalpassword.split('').sort(function(){return 0.5-Math.random()}).join('');
+  return shufflepassword
 }
 /*
 for (var i = 0; i < holdingcharacters.length; i++) { }
