@@ -14,4 +14,4 @@
 
 # Ryandong7@gmail.com
 
-# Project Link: https://github.com/Arspeke8/AdvCSSProffesionalPortfolio
+# Project Link: https://arspeke8.github.io/Challenge-3-password-generator/
